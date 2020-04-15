@@ -1,0 +1,20 @@
+{
+  "name": "node-project",
+  "version": "1.0.0",
+  "description": "node fly",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "@koa/router": "^9.0.0",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-helmet": "^5.2.0",
+    "koa-static": "^5.0.0",
+    "nodemon": "^2.0.3"
+  }
+}
