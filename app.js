@@ -5,11 +5,15 @@ const cors = require('@koa/cors')
 const helmet = require('koa-helmet')
 const jwt = require('koa-jwt')
 
+const { loggerMiddleware } = require('./src/middlewares/logger')
 const router = require('./src/routes')
 const { corsHandler } = require('./src/middlewares/cors')
 const constants = require('./config/constants')
 
 const app = new Koa()
+
+// logger
+app.use(loggerMiddleware)
 
 app.use(bodyParser)
 app.use(static(__dirname + 'public'))
