@@ -27,7 +27,11 @@ app.use(function(ctx, next){
   return next().catch((err) => {
     if (401 == err.status) {
       ctx.status = 401;
-      ctx.body = 'Protected resource, use Authorization header to get access\n';
+      ctx.body = {
+        code: 401,
+        error: 'Protected resource, use Authorization header to get access',
+        msg: 'Client Error'
+      }
     } else {
       throw err;
     }
@@ -36,7 +40,7 @@ app.use(function(ctx, next){
 app.use(jwt({ secret: constants.secret }).unless({
   path: [
     '/api/login',
-    '/api/register'
+    // '/api/register'
   ]
 }))
 

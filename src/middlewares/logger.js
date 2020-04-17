@@ -18,7 +18,7 @@ const loggerMiddleware = async (ctx, next) => {
     (ctx.socket && (ctx.socket.remoteAddress || (ctx.socket.socket && ctx.socket.socket.remoteAddress)))
   let logText = `
     ${ctx.method}
-    ${ctx.status} 
+    ${code} 
     ${ctx.url} 
     请求参数： ${JSON.stringify(ctx.request.body)} 
     响应参数： ${JSON.stringify(ctx.body)}
